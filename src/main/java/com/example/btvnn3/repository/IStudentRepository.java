@@ -1,4 +1,7 @@
 package com.example.btvnn3.repository;
 
-public interface IStudentRepository {
+import com.example.btvnn3.model.Student;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface IStudentRepository extends JpaRepository<Student,Long> {
 }
