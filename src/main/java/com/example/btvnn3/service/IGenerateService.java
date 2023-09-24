@@ -16,9 +16,6 @@ public interface IGenerateService<E>{
     E update(E e);
 
     void delete(Long id);
-    Page<E> searchByName(String name, Pageable pageable);
-    Page<E> searchByStatus(Long id, Pageable pageable);
-    Page<E> searchBySubject(Long id, Pageable pageable);
-    Page<E> searchByAddress(String address, Pageable pageable);
+
 
 }
