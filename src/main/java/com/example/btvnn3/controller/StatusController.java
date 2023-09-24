@@ -18,8 +18,8 @@ public class StatusController {
 
     @GetMapping
     public ResponseEntity<Iterable<Status>> display() {
-        Iterable<Status> statuses = statusService.findAll();
-        return new ResponseEntity<>(HttpStatus.OK);
+        Iterable<Status> status = statusService.findAll();
+        return new ResponseEntity<>(status,HttpStatus.OK);
     }
 
     @PostMapping

@@ -32,7 +32,6 @@ public class StudentService implements IStudentService {
     @Override
     public Student update(Student student) {
         studentRepository.save(student);
-
         return student;
     }
 

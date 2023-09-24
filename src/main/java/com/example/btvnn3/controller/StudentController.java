@@ -1,5 +1,6 @@
 package com.example.btvnn3.controller;
 
+import com.example.btvnn3.model.Status;
 import com.example.btvnn3.model.Student;
 import com.example.btvnn3.service.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/students")
 @CrossOrigin("*")
+@RequestMapping("/api/students")
+
 
 public class StudentController {
     @Autowired
@@ -43,6 +45,16 @@ public class StudentController {
             student.setIdStudent(idStudent);
             return new ResponseEntity<>(studentService.update(student),HttpStatus.OK);
         } return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+    @DeleteMapping("/{idStudent}")
+    public ResponseEntity<Student> delete(@PathVariable("idStudent") Long idStudent) {
+        Optional<Student> studentOptional = studentService.findOne(idStudent);
+        if (studentOptional.isPresent()) {
+            studentService.delete(idStudent);
+            return new ResponseEntity<>(studentOptional.get(), HttpStatus.NO_CONTENT);
+        }return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+
     }
 
 
