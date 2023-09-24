@@ -2,19 +2,9 @@ package com.example.btvnn3.model;
 
 public class Filter {
     private String name ;
-    private String status;
-    private String subject ;
-    private String sex ;
-
-    public Filter(String name, String status, String subject, String sex) {
-        this.name = name;
-        this.status = status;
-        this.subject = subject;
-        this.sex = sex;
-    }
-
-    public Filter() {
-    }
+    private Long status;
+    private Long subject ;
+    private int sex ;
 
     public String getName() {
         return name;
@@ -24,28 +14,37 @@ public class Filter {
         this.name = name;
     }
 
-    public String getStatus() {
+    public Long getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Long status) {
         this.status = status;
     }
 
-    public String getSubject() {
+    public Long getSubject() {
         return subject;
     }
 
-    public void setSubject(String subject) {
+    public void setSubject(Long subject) {
         this.subject = subject;
     }
-    
 
-    public String getSex() {
+    public int getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex(int sex) {
         this.sex = sex;
+    }
+
+    public Filter(String name, Long status, Long subject, int sex) {
+        this.name = name;
+        this.status = status;
+        this.subject = subject;
+        this.sex = sex;
+    }
+
+    public Filter() {
     }
 }

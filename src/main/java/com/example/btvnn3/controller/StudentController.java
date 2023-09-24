@@ -1,5 +1,6 @@
 package com.example.btvnn3.controller;
 
+import com.example.btvnn3.model.Filter;
 import com.example.btvnn3.model.Student;
 import com.example.btvnn3.service.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,6 +82,13 @@ public class StudentController {
                                  @PageableDefault(value = 2) Pageable pageable,
                                  Model model) {
         model.addAttribute("student", studentService.searchBySubject(id, pageable));
+        return "/display";
+    }
+    @GetMapping("/searchByFilter")
+    public String searchByFilter(@RequestBody Filter filter,
+                                 @PageableDefault(value = 2) Pageable pageable,
+                                 Model model) {
+        model.addAttribute("student", studentService.searchByFilter(filter, pageable));
         return "/display";
     }
 

@@ -12,7 +12,8 @@ import java.util.Optional;
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/api/subjects")
-public class SubjectController {
+public class
+SubjectController {
 @Autowired
     private ISubjectService subjectService;
 @GetMapping

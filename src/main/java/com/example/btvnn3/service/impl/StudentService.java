@@ -1,5 +1,6 @@
 package com.example.btvnn3.service.impl;
 
+import com.example.btvnn3.model.Filter;
 import com.example.btvnn3.model.Student;
 import com.example.btvnn3.repository.IStudentRepository;
 import com.example.btvnn3.service.IStudentService;
@@ -62,5 +63,16 @@ public class StudentService implements IStudentService {
     @Override
     public Page<Student> searchByAddress(String address, Pageable pageable) {
         return studentRepository.searchByAddress(address, pageable);
+    }
+
+    @Override
+    public Page<Student> searchByFilter(Filter filter, Pageable pageable) {
+        String sex ;
+        if(filter.getSex() == 1){
+            sex = "nam" ;
+        }else {
+            sex = "nữ" ;
+        }
+        return studentRepository.searchByFilter(filter.getSubject(),filter.getStatus(),sex,filter.getName(), pageable);
     }
 }
