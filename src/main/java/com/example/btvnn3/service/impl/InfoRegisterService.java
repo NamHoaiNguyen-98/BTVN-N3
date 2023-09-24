@@ -22,8 +22,9 @@ public class InfoRegisterService implements IInfoRegisterService {
     }
 
     @Override
-    public void update(InfoRegister infoRegister) {
+    public InfoRegister update(InfoRegister infoRegister) {
 
+        return infoRegister;
     }
 
     @Override

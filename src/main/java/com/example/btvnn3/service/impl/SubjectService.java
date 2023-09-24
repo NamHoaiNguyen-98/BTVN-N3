@@ -22,8 +22,9 @@ public class SubjectService implements ISubjectService {
     }
 
     @Override
-    public void update(Subject subject) {
+    public Subject update(Subject subject) {
 
+        return subject;
     }
 
     @Override

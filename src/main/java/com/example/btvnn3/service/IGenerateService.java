@@ -8,7 +8,7 @@ public interface IGenerateService<E>{
 
     void create(E e);
 
-    void update(E e);
+    E update(E e);
 
     void delete(Long id);
 }
